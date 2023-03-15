@@ -1,9 +1,18 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/src/widgets/placeholder.dart';
 import 'package:squip_project/views/dashboard.dart';
 import 'package:squip_project/views/login.dart';
 import 'package:squip_project/widgets/small_button.dart';
+
+registerUser() async {
+  await FirebaseAuth.instance.createUserWithEmailAndPassword(
+    email: emailcontroller.text,
+    password: passwordcontroller.text,
+  );
+}
+
 TextEditingController emailcontroller = TextEditingController();
 TextEditingController passwordcontroller = TextEditingController();
 
@@ -18,7 +27,10 @@ class SignUp_Screen extends StatelessWidget {
           padding: const EdgeInsets.only(top: 20.0),
           child: Column(
             children: [
-              Text("Welcome to Join SQuip ",style: TextStyle(fontSize: 30,fontWeight: FontWeight.bold),),
+              Text(
+                "Welcome to Join SQuip ",
+                style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
+              ),
               SizedBox(
                 height: 50,
               ),
@@ -58,7 +70,7 @@ class SignUp_Screen extends StatelessWidget {
                 ),
               ),
               Padding(
-                padding: const EdgeInsets.only(left:80.0),
+                padding: const EdgeInsets.only(left: 80.0),
                 child: Row(
                   children: [
                     Text("Already have an account?"),
@@ -74,9 +86,9 @@ class SignUp_Screen extends StatelessWidget {
                 ),
               ),
               Small_Button(
-                
                 title: "Sign Up",
-                onTap: () {
+                onTap: () async {
+                  await registerUser();
                   Navigator.pushReplacement(
                       context,
                       MaterialPageRoute(

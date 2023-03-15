@@ -1,3 +1,4 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/src/widgets/placeholder.dart';
@@ -5,6 +6,12 @@ import 'package:squip_project/views/dashboard.dart';
 import 'package:squip_project/views/singup.dart';
 
 import '../widgets/small_button.dart';
+
+loginUser() async {
+  await FirebaseAuth.instance.signInWithEmailAndPassword(
+      email: emailcontroller.text, password: passwordcontroller.text);
+}
+
 TextEditingController emailcontroller = TextEditingController();
 TextEditingController passwordcontroller = TextEditingController();
 
@@ -79,7 +86,8 @@ class Login_Screen extends StatelessWidget {
               ),
               Small_Button(
                 title: "Login",
-                onTap: () {
+                onTap: () async {
+                  await loginUser();
                   Navigator.pushReplacement(
                       context,
                       MaterialPageRoute(

@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "1408986890",
+    "project_id": "squip-app",
+    "storage_bucket": "squip-app.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1408986890:android:d1960e142c79a69eaf94f3",
+        "android_client_info": {
+          "package_name": "com.example.squip_project"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1408986890-p222t37udrnso2nm5r2l18ssnqtoiuf1.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAmRh0B4tUhBbxwYS8KgWSl14CoEXcYP_I"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1408986890-p222t37udrnso2nm5r2l18ssnqtoiuf1.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
